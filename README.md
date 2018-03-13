@@ -82,6 +82,7 @@ which [-a] <cmd>
 - `Ctrl+L` - `clear`
 - `Ctrl+R` - History Search, `Ctrl+C` to Quit
 - `Ctrl+Z` - SIGSTP
+- `Ctrl+-` - Undo
 
 ## tar & gzip & bz2
 
