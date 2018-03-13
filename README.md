@@ -1,5 +1,7 @@
 # Bash Cookbook
 
+- Basic Commands
+
 ## Basic Commands
 
 ```bash
@@ -116,4 +118,52 @@ to join them back together. If the files were named: movie.mp4.001, movie.mp4.00
 
 ```bash
 cat movie.mp4.0* > movie.mp4
+```
+
+### Output
+
+```bash
+echo [-n|-e] <str>
+```
+
+### Environment Variables
+
+```bash
+echo $PWD   # current directory
+echo $USER  # current user name
+echo $HOME  # home directory of current user
+```
+
+### IO Redirect
+
+**Redirect stderr**:
+
+```bash
+ls -l /bin/usr 2> ls-error.log
+```
+
+**Redirect stdout and stderr**:
+
+```bash
+ls -l /bin/usr &> ls.log  # Bash 4.0+
+ls -l /bin/usr > ls.log 2>&1
+```
+
+**Sometimes "silence is golden"**:
+
+```bash
+ls -l /bin/usr > /dev/null 2>ls.log
+```
+
+### Expansion
+
+```bash
+$ echo text ~/*.txt {a,b} {A..C} $(echo a) $((1+1)) $USER
+text /home/ly/a.txt a b A B C a 2 ly
+
+$ echo "text ~/*.txt {a,b} {A..C} $(echo a) $((1+1)) $USER"
+text ~/*.txt {a,b} {A..C} a 2 ly
+
+$ echo 'text ~/*.txt {a,b} {A..C} $(echo a) $((1+1)) $USER'
+text ~/*.txt {a,b} {A..C} $(echo a) $((1+1)) $USER
 ```
