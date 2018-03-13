@@ -13,6 +13,7 @@
 - I/O Redirection
 - Expansion
 - Testing Options
+- Text Processing
 
 
 ## Basic Commands
@@ -204,4 +205,29 @@ Used frequently:
 -nt newer than
 -ot older than
 -ef hard link
+```
+
+## Text Processing
+
+### Subtitute
+
+```bash
+str="a-b-c"
+echo ${str/-/_}_d   # a_b-c_d
+echo ${str//-/_}_d  # a_b_c_d
+```
+
+### Substring
+
+```bash
+str="abcdef"
+echo ${str:1}       # a
+echo ${str:2:2}     # bc
+```
+
+### Testing Operator
+
+```bash
+-z empty
+-n NOT empty
 ```
