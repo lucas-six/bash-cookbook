@@ -15,6 +15,8 @@
 - Testing Options
 - Text Processing
 - Regular Expression
+- Input From stdin
+- Input From File
 
 
 ## Basic Commands
@@ -250,3 +252,26 @@ echo ${str:2:2}     # bc
 - `abc$` - Any line ended with `abc`
 - `+` - More than once
 - `{n}`, `{n,m}` - From (n) to (m) times
+
+## Input From stdin
+
+```bash
+DEFAULT="default"
+read -t 5 -p "Prompt [$DEFAULT]: " VAR
+if [[ $? != 0 ]]; then
+	echo "xxx"
+fi
+VAR=${VAR:-$DEFAULT}
+```
+
+## Input From stdin
+
+```bash
+cat > /etc/pip.conf <<EOF
+[global]
+index-url = https://pypi.douban.com/simple
+
+[list]
+format = columns
+EOF
+```
