@@ -1,5 +1,25 @@
 # Bash Cookbook
 
+`Linux` or `Mac OS X` is recommended to use `bash` (v4+), for `Windows`, please ...
+
+For Mac users, please [install `MacPorts`](https://www.macports.org/install.php) first in `Terminal`.
+
+Then run:
+
+```bash
+sudo port install bash bash-completion coreutils vim lbzip2 gcc make openssl curl python27
+
+sudo port select --set python python27
+sudo port select --set python2 python27
+```
+
+For Linux users, Do it yourself!
+
+For Windows users, install a virtual machine [VirtualBox](https://www.virtualbox.org/) with `CentOS` 7.4+.
+Or connect to a remote Linux host by [Putty](http://www.putty.org/) and [WinSCP](http://winscp.net/)
+
+---
+
 - Basic Commands
 - Help Documentation
 - Key Bindings
@@ -17,7 +37,7 @@
 - Regular Expression
 - Input From stdin
 - Input From File
-- Loop on Array
+- Loop Over Array
 
 
 ## Basic Commands
@@ -277,7 +297,7 @@ format = columns
 EOF
 ```
 
-## Loop on Array
+## Loop Over Array
 
 ```bash
 a=(1 2)
