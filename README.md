@@ -11,7 +11,7 @@ For Mac users, [install `MacPorts`](https://www.macports.org/install.php) first 
 Then run:
 
 ```bash
-sudo port install bash bash-completion coreutils vim lbzip2 gcc make openssl curl python27
+sudo port install bash bash-completion coreutils vim lbzip2 gcc make colordiff openssl curl python27
 
 sudo port select --set python python27
 sudo port select --set python2 python27
