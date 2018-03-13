@@ -20,7 +20,7 @@ sudo port select --set python2 python27
 For Linux users, Do it yourself!
 
 For Windows users, install a virtual machine [VirtualBox](https://www.virtualbox.org/) with `CentOS` 7.4+.
-Or connect to a remote Linux host by [Putty](http://www.putty.org/) and [WinSCP](http://winscp.net/)
+Or connect to a remote Linux host by [Putty](http://www.putty.org/) and [WinSCP](http://winscp.net/).
 
 ---
 
@@ -74,7 +74,7 @@ which [-a] <cmd>
 
 - `Tab` - Completion
 - `Ctrl+D` - `exit` or EOF
-- `Crrl+C` - SIGTERM
+- `Ctrl+C` - SIGTERM
 - `Ctrl+A` / `Ctrl+E` - Go to Beginning / End of Command Line
 - `Ctrl+U` / `Ctrl+K` - Cut from Current Position to Beginning / End of Command Line
 - `Ctrl+Y` - Paste
