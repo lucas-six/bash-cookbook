@@ -17,6 +17,7 @@
 - Regular Expression
 - Input From stdin
 - Input From File
+- Loop on Array
 
 
 ## Basic Commands
@@ -274,4 +275,13 @@ index-url = https://pypi.douban.com/simple
 [list]
 format = columns
 EOF
+```
+
+## Loop on Array
+
+```bash
+a=(1 2)
+for i in ${a[*]}; do
+    echo $i
+done
 ```
