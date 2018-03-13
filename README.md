@@ -264,7 +264,7 @@ fi
 VAR=${VAR:-$DEFAULT}
 ```
 
-## Input From stdin
+## Input From File
 
 ```bash
 cat > /etc/pip.conf <<EOF
