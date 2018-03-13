@@ -1,6 +1,18 @@
 # Bash Cookbook
 
 - Basic Commands
+- Help Documentation
+- Key Bindings
+- tar & gzip & bz2
+- find
+- grep
+- Date & Time
+- Join Files
+- Output
+- Environment Variables
+- I/O Redirection
+- Expansion
+
 
 ## Basic Commands
 
@@ -20,7 +32,7 @@ tail -f <file>
 cut -d -f
 ```
 
-### Help Documentation
+## Help Documentation
 
 ```bash
 <cmd> --help
@@ -28,7 +40,7 @@ man|info [section] <cmd>
 which [-a] <cmd>
 ```
 
-### Key Bindings
+## Key Bindings
 
 - `Tab` - Completion
 - `Ctrl+D` - `exit` or EOF
@@ -40,7 +52,7 @@ which [-a] <cmd>
 - `Ctrl+R` - History Search, `Ctrl+C` to Quit
 - `Ctrl+Z` - SIGSTP
 
-### tar & gzip & bz2
+## tar & gzip & bz2
 
 ```bash
 tar xzvf tar.gz|tgz
@@ -50,7 +62,7 @@ tar czvf tar.gz|tgz <file ...>|<dir>
 tar czvf tar.bz2 <file ...>|<dir>
 ```
 
-### find - Search File
+## find - Search File
 
 ```bash
 find <dir> <text-expr> [<logic-opertor ...>] <act>
@@ -77,7 +89,7 @@ find <dir> <text-expr> [<logic-opertor ...>] <act>
     -exec <cmd> '{}' ';'|+
 ```
 
-### grep - Search File Contents
+## grep - Search File Contents
 
 ```bash
 grep [opt] <pattern> <file>
@@ -89,7 +101,7 @@ grep [opt] <pattern> <file>
   -f, --file=<pattern-file>
 ```
 
-### Date & Time
+## Date & Time
 
 ```bash
 date <+format>
@@ -111,7 +123,7 @@ date <+format>
     %t - tab ('\t')
 ```
 
-### Join Files
+## Join Files
 
 *Say we have a large file that has been split into multiple parts, and we want
 to join them back together. If the files were named: movie.mp4.001, movie.mp4.002 ... movie.mp4.099*
@@ -120,13 +132,13 @@ to join them back together. If the files were named: movie.mp4.001, movie.mp4.00
 cat movie.mp4.0* > movie.mp4
 ```
 
-### Output
+## Output
 
 ```bash
 echo [-n|-e] <str>
 ```
 
-### Environment Variables
+## Environment Variables
 
 ```bash
 echo $PWD   # current directory
@@ -134,28 +146,28 @@ echo $USER  # current user name
 echo $HOME  # home directory of current user
 ```
 
-### IO Redirect
+## I/O Redirection
 
-**Redirect stderr**:
+### Redirect stderr:
 
 ```bash
 ls -l /bin/usr 2> ls-error.log
 ```
 
-**Redirect stdout and stderr**:
+### Redirect stdout and stderr:
 
 ```bash
 ls -l /bin/usr &> ls.log  # Bash 4.0+
 ls -l /bin/usr > ls.log 2>&1
 ```
 
-**Sometimes "silence is golden"**:
+### Sometimes "silence is golden"
 
 ```bash
 ls -l /bin/usr > /dev/null 2>ls.log
 ```
 
-### Expansion
+## Expansion
 
 ```bash
 $ echo text ~/*.txt {a,b} {A..C} $(echo a) $((1+1)) $USER
