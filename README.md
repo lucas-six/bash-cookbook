@@ -14,6 +14,7 @@
 - Expansion
 - Testing Options
 - Text Processing
+- Regular Expression
 
 
 ## Basic Commands
@@ -231,3 +232,21 @@ echo ${str:2:2}     # bc
 -z empty
 -n NOT empty
 ```
+
+## Regular Expression
+
+- `*` - Any numbers of characters
+- `?` - Any single character
+- `[abc]` - Any character in set of `abc`
+- `[!abc]` - Any character NOT in set of `abc`
+- `[:alpha:]` - Any letter
+- `[:lower:]` - Any lower-case letter
+- `[:upper:]` - Any upper-case letter
+- `[:digit:]` - Any digit
+- `[:alnum:]` - `[[:alpha:][:digit:]]`
+- `[:word:]` - `[[:alnum:]_]*`
+- `[:blank:]` - `Space` + `Tab`
+- `^abc` - Any line started with `abc`
+- `abc$` - Any line ended with `abc`
+- `+` - More than once
+- `{n}`, `{n,m}` - From (n) to (m) times
