@@ -1,8 +1,12 @@
 # Bash Cookbook
 
-`Linux` or `Mac OS X` is recommended to use `bash` (v4+), for `Windows`, please ...
+`bash` **4+** is recommended.
 
-For Mac users, please [install `MacPorts`](https://www.macports.org/install.php) first in `Terminal`.
+`Linux` or `Mac OS X` is recommended.
+
+For `Windows`, please ...
+
+For Mac users, [install `MacPorts`](https://www.macports.org/install.php) first in `Terminal`.
 
 Then run:
 
