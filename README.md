@@ -77,6 +77,7 @@ which [-a] <cmd>
 - `Ctrl+C` - SIGTERM
 - `Ctrl+A` / `Ctrl+E` - Go to Beginning / End of Command Line
 - `Ctrl+U` / `Ctrl+K` - Cut from Current Position to Beginning / End of Command Line
+- `Ctrl+Left` / `Ctrl+Right` - Go to Previous / Next Word
 - `Ctrl+Y` - Paste
 - `Ctrl+L` - `clear`
 - `Ctrl+R` - History Search, `Ctrl+C` to Quit
