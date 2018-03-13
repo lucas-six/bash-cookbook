@@ -12,6 +12,7 @@
 - Environment Variables
 - I/O Redirection
 - Expansion
+- Testing Options
 
 
 ## Basic Commands
@@ -178,4 +179,29 @@ text ~/*.txt {a,b} {A..C} a 2 ly
 
 $ echo 'text ~/*.txt {a,b} {A..C} $(echo a) $((1+1)) $USER'
 text ~/*.txt {a,b} {A..C} $(echo a) $((1+1)) $USER
+```
+
+## Testing Options
+
+```bash
+if [[ <-opt> xxx ]]; then
+    ...
+fi
+```
+
+Used frequently:
+
+```bash
+-e exist
+-s NOT empty
+-f regular file
+-d directory
+-S socket
+-p named pipe
+-h symbolic link
+-r readable
+-w writable
+-nt newer than
+-ot older than
+-ef hard link
 ```
