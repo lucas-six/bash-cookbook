@@ -43,7 +43,6 @@ Or connect to a remote Linux host by [Putty](http://www.putty.org/) and [WinSCP]
 - Input From File
 - Loop Over Array
 
-
 ## Basic Commands
 
 ```bash
@@ -180,13 +179,13 @@ echo $HOME  # home directory of current user
 
 ## I/O Redirection
 
-### Redirect stderr:
+### Redirect stderr
 
 ```bash
 ls -l /bin/usr 2> ls-error.log
 ```
 
-### Redirect stdout and stderr:
+### Redirect stdout and stderr
 
 ```bash
 ls -l /bin/usr &> ls.log  # Bash 4.0+
@@ -286,7 +285,7 @@ echo ${str:2:2}     # bc
 DEFAULT="default"
 read -t 5 -p "Prompt [$DEFAULT]: " VAR
 if [[ $? != 0 ]]; then
-	echo "xxx"
+    echo "xxx"
 fi
 VAR=${VAR:-$DEFAULT}
 ```
