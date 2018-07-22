@@ -19,9 +19,9 @@ if [ -f ~/.bashrc ]; then
 	. ~/.bashrc
 fi
 
-# Setting PATH for Python 2.7
+# Setting PATH for Python 2.7 and 3.6
 # The original version is saved in .bash_profile.pysave
-PATH="/opt/local/bin:/opt/local/sbin:/Library/Frameworks/Python.framework/Versions/2.7/bin:${PATH}"
+PATH="/opt/local/bin:/opt/local/sbin:/Library/Frameworks/Python.framework/Versions/2.7/bin:/Library/Frameworks/Python.framework/Versions/3.6/bin:${PATH}"
 export PATH
 
 # alias
