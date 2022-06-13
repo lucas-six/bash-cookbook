@@ -1,3 +1,9 @@
+Please move to [Dookbook](https://github.com/dookbook).
+
+此项目已经停止更新，已并入组织 Dookbook (<https://github.com/dookbook>)
+
+Dookbook (<https://dookbook.info/>)，是软件开发的日常菜谱，开箱即用，提供常用的代码示例。
+
 # Bash Cookbook
 
 `bash` **4+** is recommended.
