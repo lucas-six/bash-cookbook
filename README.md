@@ -83,14 +83,14 @@ which [-a] <cmd>
 - `Ctrl+Z` - SIGSTP
 - `Ctrl+-` - Undo
 
-## tar & gzip & bz2
+## tar & gzip & bzip2
 
 ```bash
 tar xzvf tar.gz|tgz
 tar xjvf tar.bz2
 
 tar czvf tar.gz|tgz <file ...>|<dir>
-tar czvf tar.bz2 <file ...>|<dir>
+tar cjvf tar.bz2 <file ...>|<dir>
 ```
 
 ## find - Search File
