@@ -2,7 +2,7 @@
 
 <section align="center">
   <img src="https://leven-cn.github.io/bash-cookbook/imgs/Bash-noalpha.png"
-    alt="Bash Logo" width="250" height="250" style="text-align:center;" title="Bash Logo">
+    alt="Bash Logo" width="384" height="161" style="text-align:center;" title="Bash Logo">
   <br><br>
   <p>
     <a href="https://github.com/leven-cn/bash-cookbook/actions/workflows/lint.yml">
