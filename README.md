@@ -1,59 +1,64 @@
-Please move to [Dookbook](https://github.com/dookbook).
-
-此项目已经停止更新，已并入组织 Dookbook (<https://github.com/dookbook>)
-
-Dookbook (<https://dookbook.info/>)，是软件开发的日常菜谱，开箱即用，提供常用的代码示例。
-
 # Bash Cookbook
 
-`bash` **4+** is recommended.
+<section align="center">
+  <img src="https://leven-cn.github.io/bash-cookbook/imgs/Bash-noalpha.png"
+    alt="Bash Logo" width="250" height="250" style="text-align:center;" title="Bash Logo">
+  <br><br>
+  <p>
+    <a href="https://github.com/leven-cn/bash-cookbook/actions/workflows/lint.yml">
+      <img src="https://github.com/leven-cn/bash-cookbook/actions/workflows/lint.yml/badge.svg"
+      alt="GitHub Actions - lint" style="max-width:100%;">
+    </a>
+  </p>
+  <p>Recipes for <code>Bash</code>.</p>
+  <p>Hands-on Bash examples and guides for daily work.</p>
+  <p><a href="https://leven-cn.github.io/bash-cookbook/">https://leven-cn.github.io/bash-cookbook/</a></p>
+</section>
 
-`Linux` or `Mac OS X` is recommended.
+<!-- markdownlint-disable line-length -->
 
-For `Windows`, please ...
+Bash (Bourne Again shell)
 
-For Mac users, [install `MacPorts`](https://www.macports.org/install.php) first in `Terminal`.
+## Installation and Update
 
-Then run:
+### Linux
+
+Bash is the default shell for *Linux*.
+
+#### Ubuntu, Debian
 
 ```bash
-sudo port install bash bash-completion coreutils vim lbzip2 gcc make colordiff openssl curl python27
-
-sudo port select --set python python27
-sudo port select --set python2 python27
+apt install bash bash-completion
 ```
 
-For Linux users, Do it yourself!
+#### Red Hat (RHEL, CentOS, Fedora)
 
-For Windows users, install a virtual machine [VirtualBox](https://www.virtualbox.org/) with `CentOS` 7.4+.
-Or connect to a remote Linux host by [Putty](http://www.putty.org/) and [WinSCP](http://winscp.net/).
+```bash
+dnf install -y bash bash-completion
+```
 
----
+or
 
-- Basic Commands
-- Help Documentation
-- Key Bindings
-- tar & gzip & bz2
-- find
-- grep
-- Date & Time
-- Join Files
-- Output
-- Environment Variables
-- I/O Redirection
-- Expansion
-- Testing Options
-- Text Processing
-- Regular Expression
-- Input From stdin
-- Input From File
-- Loop Over Array
+```bash
+yum install -y bash bash-completion
+```
 
-## Basic Commands
+### macOS
+
+#### Homebrew
+
+```bash
+brew install bash bash-completion@2
+chsh -s /usr/local/bin/bash
+```
+
+## Builitin
+
+### Basic
 
 ```bash
 cd [~|-|..|<dir>]
-pwd
+pwd  # $PWD
 ls [-l|-a|-r|-h|-R]
 less <file>
 ln -s[f] <src> <symlink>
@@ -67,9 +72,24 @@ tail -f <file>
 cut -d -f
 ```
 
-## Help Documentation
+### `type`
 
 ```bash
+$ type type
+type is a shell builtin
+
+$ type cp
+cp is /usr/bin/cp
+
+$ type ls
+ls is aliased to 'ls --color=auto'
+```
+
+## Help
+
+```bash
+help <builtin-cmd>
+
 <cmd> --help
 man|info [section] <cmd>
 which [-a] <cmd>
@@ -77,97 +97,17 @@ which [-a] <cmd>
 
 ## Key Bindings
 
-- `Tab` - Completion
-- `Ctrl+D` - `exit` or EOF
-- `Ctrl+C` - SIGTERM
+- `Tab` - Command Completion
+- `Ctrl+D` - `exit` or **EOF**
+- `Ctrl+C` - **SIGTERM**
 - `Ctrl+A` / `Ctrl+E` - Go to Beginning / End of Command Line
 - `Ctrl+U` / `Ctrl+K` - Cut from Current Position to Beginning / End of Command Line
 - `Ctrl+Left` / `Ctrl+Right` - Go to Previous / Next Word
 - `Ctrl+Y` - Paste
 - `Ctrl+L` - `clear`
 - `Ctrl+R` - History Search, `Ctrl+C` to Quit
-- `Ctrl+Z` - SIGSTP
+- `Ctrl+Z` - **SIGSTP**
 - `Ctrl+-` - Undo
-
-## tar & gzip & bzip2
-
-```bash
-tar xzvf tar.gz|tgz
-tar xjvf tar.bz2
-
-tar czvf tar.gz|tgz <file ...>|<dir>
-tar cjvf tar.bz2 <file ...>|<dir>
-```
-
-## find - Search File
-
-```bash
-find <dir> <text-expr> [<logic-opertor ...>] <act>
-    -name <file-pattern>
-    -type f|d|l|b|c
-    -size <N>c|k|M|G
-    -empty
-    -usr <user-name>
-    -uid <uid>
-    -cmin [-|+]<N-min>
-    -ctime [-|+]<N-day>
-    -inum <inode>
-
-    -and
-    -or
-    -not
-    ()
-
-    -print
-    -printf <fmt>
-    -fprintf <file> <fmt>
-    -delete
-    -ls
-    -exec <cmd> '{}' ';'|+
-```
-
-## grep - Search File Contents
-
-```bash
-grep [opt] <pattern> <file>
-  -i, --ignore-case
-  -w, --word-regexp
-  -x, --line=regexp
-  -n, --line-number
-  -v, --invert-match
-  -f, --file=<pattern-file>
-```
-
-## Date & Time
-
-```bash
-date <+format>
-    %% - '%'
-    %H - hour (00-23)
-    %I - hour (01-12)
-    %M - minute (00-59)
-    %S - second (00-59)
-    %T - %H:%M:%S
-    %R - %H:%M
-    %y - year (00-99)
-    %Y - year (0000-9999)
-    %m - month (01-12)
-    %d - day of month (01-31)
-    %D - %m/%d/%y
-    %u - day of week (1-7, 1=Monday)
-    %w - day of week (0-6, 0=Sunday)
-    %n - newline ('\n')
-    %t - tab ('\t')
-```
-
-## Join Files
-
-*Say we have a large file that has been split into multiple parts, and we want
-to join them back together. If the files were named: movie.mp4.001, movie.mp4.002 ... movie.mp4.099*
-
-```bash
-cat movie.mp4.0* > movie.mp4
-```
 
 ## Output
 
@@ -183,12 +123,46 @@ echo $USER  # current user name
 echo $HOME  # home directory of current user
 ```
 
-## I/O Redirection
+## Input / Output
 
-### Redirect stderr
+### Input
+
+#### From stdin
+
+```bash
+DEFAULT="default"
+read -t 5 -p "Prompt [$DEFAULT]: " VAR
+if [[ $? != 0 ]]; then
+    echo "xxx"
+fi
+VAR=${VAR:-$DEFAULT}
+```
+
+#### From File
+
+```bash
+cat > /etc/pip.conf <<EOF
+[global]
+index-url = https://pypi.douban.com/simple
+
+[list]
+format = columns
+EOF
+```
+
+### Output Redirection
+
+#### Redirect stderr
 
 ```bash
 ls -l /bin/usr 2> ls-error.log
+```
+
+#### Redirect stdout and stderr
+
+```bash
+ls -l /bin/usr &> ls.log  # Bash 4.0+
+ls -l /bin/usr > ls.log 2>&1
 ```
 
 ### Redirect stdout and stderr
@@ -198,13 +172,20 @@ ls -l /bin/usr &> ls.log  # Bash 4.0+
 ls -l /bin/usr > ls.log 2>&1
 ```
 
-### Sometimes "silence is golden"
+#### Sometimes "silence is golden"
 
 ```bash
 ls -l /bin/usr > /dev/null 2>ls.log
 ```
 
 ## Expansion
+
+- **pathname expansion**: `*.txt`
+- **tilde expansion**: `~`
+- **brace expansion**: `{a,b}`, `{A..C}`
+- **command substitution**: `$(echo a)`
+- **arithmetic expansion**: `$((1+1))`
+- **parameter expansion**: `$USER`
 
 ```bash
 $ echo text ~/*.txt {a,b} {A..C} $(echo a) $((1+1)) $USER
@@ -215,31 +196,6 @@ text ~/*.txt {a,b} {A..C} a 2 ly
 
 $ echo 'text ~/*.txt {a,b} {A..C} $(echo a) $((1+1)) $USER'
 text ~/*.txt {a,b} {A..C} $(echo a) $((1+1)) $USER
-```
-
-## Testing Options
-
-```bash
-if [[ <-opt> xxx ]]; then
-    ...
-fi
-```
-
-Used frequently:
-
-```bash
--e exist
--s NOT empty
--f regular file
--d directory
--S socket
--p named pipe
--h symbolic link
--r readable
--w writable
--nt newer than
--ot older than
--ef hard link
 ```
 
 ## Text Processing
@@ -285,27 +241,44 @@ echo ${str:2:2}     # bc
 - `+` - More than once
 - `{n}`, `{n,m}` - From (n) to (m) times
 
-## Input From stdin
+## Startup Files
+
+### Login Shell Sessions
+
+- **`~/.bash_profile`**
+- *`~/.bash_login`*
+- *`~/.profile`*
+- **`/etc/profile`**
+- *`/etc/profile.d/*.sh`*
+
+### Non-Login Shell Sessions
+
+- **`~/.bashrc`**
+- *`/etc/bash.bashrc`*
+
+## Testing Options
 
 ```bash
-DEFAULT="default"
-read -t 5 -p "Prompt [$DEFAULT]: " VAR
-if [[ $? != 0 ]]; then
-    echo "xxx"
+if [[ <-opt> xxx ]]; then
+    ...
 fi
-VAR=${VAR:-$DEFAULT}
 ```
 
-## Input From File
+Used frequently:
 
 ```bash
-cat > /etc/pip.conf <<EOF
-[global]
-index-url = https://pypi.douban.com/simple
-
-[list]
-format = columns
-EOF
+-e exist
+-s NOT empty
+-f regular file
+-d directory
+-S socket
+-p named pipe
+-h symbolic link
+-r readable
+-w writable
+-nt newer than
+-ot older than
+-ef hard link
 ```
 
 ## Loop Over Array
@@ -316,3 +289,7 @@ for i in ${a[*]}; do
     echo $i
 done
 ```
+
+## References
+
+- [The Bash Reference Manual](https://www.gnu.org/savannah-checkouts/gnu/bash/manual/bash.html)

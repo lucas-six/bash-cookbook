@@ -1,5 +1,5 @@
 # .bash_profile
-# Copyrights (c) 2015-2018 L<leven.cn@gmail.com>
+# Copyrights (c) 2015-2023 L<leven.cn@gmail.com>
 
 if [ -f /etc/profile ]; then
 	. /etc/profile
@@ -69,17 +69,3 @@ function extract {
     fi
 fi
 }
-
-# Git branch in prompt.
-parse_git_branch() {
-	git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
-}
-export PS1="\u@\h:\w\[\033[32m\]\$(parse_git_branch)\[\033[00m\]$ "
-
-alias linter='python3 -m pylint'
-
-
-# Setting PATH for Python 2.7
-# The original version is saved in .bash_profile.pysave
-PATH="/Library/Frameworks/Python.framework/Versions/2.7/bin:${PATH}"
-export PATH
