@@ -29,11 +29,6 @@ then
   fi
 fi
 
-# Setting PATH for Python 2.7 and 3.6
-# The original version is saved in .bash_profile.pysave
-PATH="/Library/Frameworks/Python.framework/Versions/2.7/bin:/Library/Frameworks/Python.framework/Versions/3.6/bin:/opt/local/bin:/opt/local/sbin:${PATH}"
-export PATH
-
 # alias
 alias ll='ls -alh'
 alias vi='vim'
