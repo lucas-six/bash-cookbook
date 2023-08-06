@@ -10,13 +10,23 @@ if [ -f /etc/bash_completion ]; then
 	. /etc/bash_completion
 fi
 
-# bash completion on Mac with MacPorts installed
-if [ -f /opt/local/etc/profile.d/bash_completion.sh ]; then
-    . /opt/local/etc/profile.d/bash_completion.sh
-fi
-
 if [ -f ~/.bashrc ]; then
 	. ~/.bashrc
+fi
+
+# macOS: Homebrew: bash completion
+if type brew &>/dev/null
+then
+  HOMEBREW_PREFIX="$(brew --prefix)"
+  if [[ -r "${HOMEBREW_PREFIX}/etc/profile.d/bash_completion.sh" ]]
+  then
+    source "${HOMEBREW_PREFIX}/etc/profile.d/bash_completion.sh"
+  else
+    for COMPLETION in "${HOMEBREW_PREFIX}/etc/bash_completion.d/"*
+    do
+      [[ -r "${COMPLETION}" ]] && source "${COMPLETION}"
+    done
+  fi
 fi
 
 # Setting PATH for Python 2.7 and 3.6
