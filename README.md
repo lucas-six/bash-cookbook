@@ -10,14 +10,12 @@
       alt="GitHub Actions - lint" style="max-width:100%;">
     </a>
   </p>
-  <p>Recipes for <code>Bash</code>.</p>
+  <p>Recipes for <code>Bash</code> (Bourne Again shell).</p>
   <p>Hands-on Bash examples and guides for daily work.</p>
   <p><a href="https://leven-cn.github.io/bash-cookbook/">https://leven-cn.github.io/bash-cookbook/</a></p>
 </section>
 
 <!-- markdownlint-disable line-length -->
-
-Bash (Bourne Again shell)
 
 ## Installation and Update
 
