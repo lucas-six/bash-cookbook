@@ -1,5 +1,5 @@
 # .bash_profile
-# Copyrights (c) 2015-2023 L<leven.cn@gmail.com>
+# Copyrights (c) 2015-2024 Lucas <lucassix.lee@gmail.com>
 
 if [ -f /etc/profile ]; then
 	. /etc/profile
